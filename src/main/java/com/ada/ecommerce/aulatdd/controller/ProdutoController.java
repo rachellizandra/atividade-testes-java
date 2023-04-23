@@ -32,4 +32,9 @@ public class ProdutoController {
     public void deletarProduto(@PathVariable Long id) {
         produtoService.deletarProduto(id);
     }
+
+    @PutMapping("/atualizar")
+    public void atualizarProduto(@RequestBody Produto produto){
+        produtoService.atualizarProduto(produto);
+    }
 }
