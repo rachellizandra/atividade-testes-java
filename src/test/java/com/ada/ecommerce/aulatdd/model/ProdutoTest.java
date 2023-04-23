@@ -11,6 +11,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.math.BigDecimal;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 public class ProdutoTest {
@@ -25,14 +27,12 @@ public class ProdutoTest {
     private MockMvc mockMvc;
 
     public Produto criarProdutoTeste() throws Exception {
-
         String id = "1";
         String nome = "teste";
         String descricao = "teste";
-        String preco = "1.0";
-        Produto produto1 = new Produto(Long.parseLong(id), nome, descricao, Double.parseDouble(preco));
+        BigDecimal preco = BigDecimal.ONE;
+        Produto produto1 = new Produto(Long.parseLong(id), nome, descricao, preco);
         return produtoRepository.save(produto1);
-
     }
 
     @Test
