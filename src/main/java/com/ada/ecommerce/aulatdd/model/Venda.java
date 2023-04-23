@@ -26,7 +26,6 @@ public class Venda {
     private String historico;
 
     private BigDecimal saldo;
-
     private LocalDateTime dataVenda;
 
     @Override

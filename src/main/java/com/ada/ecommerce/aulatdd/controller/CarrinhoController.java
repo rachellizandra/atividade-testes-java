@@ -39,5 +39,4 @@ public class CarrinhoController {
     public void atualizarCliente(@RequestBody Carrinho carrinho){
         carrinhoService.atualizarCarrinho(carrinho);
     }
-
 }

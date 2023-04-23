@@ -15,7 +15,7 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping("/novo")
-    public void criarCarrinho(@RequestBody Cliente cliente) {
+    public void criarCliente(@RequestBody Cliente cliente) {
         clienteService.cadastrarCliente(cliente);
     }
 
@@ -38,4 +38,5 @@ public class ClienteController {
     public void atualizarCliente(@RequestBody Cliente cliente){
         clienteService.atualizarCliente(cliente);
     }
+
 }

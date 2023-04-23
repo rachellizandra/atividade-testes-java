@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/itens")
 public class ItemVendaController {
+
     @Autowired
     private ItemVendaService itemVendaService;
 
@@ -35,7 +36,7 @@ public class ItemVendaController {
     }
 
     @PutMapping("/atualizar")
-    public void atualizarItemVenda(@RequestBody ItemVenda itemVenda){
+    public void atualizarItem(@RequestBody ItemVenda itemVenda){
         itemVendaService.atualizarItemVenda(itemVenda);
     }
 }

@@ -1,5 +1,6 @@
 package com.ada.ecommerce.aulatdd.service;
 
+import com.ada.ecommerce.aulatdd.model.Carrinho;
 import com.ada.ecommerce.aulatdd.model.ItemVenda;
 import com.ada.ecommerce.aulatdd.repository.ItemVendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +10,13 @@ import java.util.List;
 
 @Service
 public class ItemVendaService {
-    @Autowired
-    ItemVendaRepository itemVendaRepository;
+        @Autowired
+        ItemVendaRepository itemVendaRepository;
 
     public ItemVendaService() {
         this.itemVendaRepository = itemVendaRepository;
     }
+
 
     public List<ItemVenda> listarItens() {
         return itemVendaRepository.findAll();
@@ -43,5 +45,6 @@ public class ItemVendaService {
         itemVendaAtualizado.setDataCriacao(itemVendaAnterior.getDataCriacao());
 
         itemVendaRepository.save(itemVendaAtualizado);
+        }
+
     }
-}

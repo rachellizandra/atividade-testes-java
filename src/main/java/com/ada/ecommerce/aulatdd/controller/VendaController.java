@@ -19,10 +19,10 @@ public class VendaController {
         vendaService.cadastrarVenda(venda);
     }
 
-//    @GetMapping(value = "/lista", produces = "application/json")
-//    public ResponseEntity<List<Venda>> listaVendas() {
-//        return ResponseEntity.ok(vendaService.listarVendas());
-//    }
+    @GetMapping(value = "/lista", produces = "application/json")
+    public ResponseEntity<List<Venda>> listarVendas() {
+        return ResponseEntity.ok(vendaService.listarVendas());
+    }
 
     @GetMapping("/{id}")
     public void encontrarVendaPorId(@PathVariable Long id) {

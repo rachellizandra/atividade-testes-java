@@ -8,13 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+
 public class CarrinhoService {
+
     @Autowired
     CarrinhoRepository carrinhoRepository;
 
     public CarrinhoService() {
         this.carrinhoRepository = carrinhoRepository;
     }
+
 
     public List<Carrinho> listarCarrinhos() {
         return carrinhoRepository.findAll();
