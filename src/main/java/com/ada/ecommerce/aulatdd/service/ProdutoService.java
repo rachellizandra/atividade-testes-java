@@ -32,4 +32,15 @@ public class ProdutoService {
     public void deletarProduto(Long id) {
         produtoRepository.deleteById(id);
     }
+
+    public void atualizarProduto(Produto produtoAntigo) {
+        Produto produtoEstoque = produtoRepository.findById(produtoAntigo.getId()
+        ).orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+        produtoEstoque.setNome(produtoAntigo.getNome());
+        produtoEstoque.setDescricao(produtoAntigo.getDescricao());
+        produtoEstoque.setPreco(produtoAntigo.getPreco());
+
+        produtoRepository.save(produtoEstoque);
+    }
 }
