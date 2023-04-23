@@ -22,16 +22,16 @@ public class ProdutoTest {
     ProdutoRepository produtoRepository;
 
     private Produto produto;
-
     @Autowired
     private MockMvc mockMvc;
 
     public Produto criarProdutoTeste() throws Exception {
         String id = "1";
         String nome = "teste";
+        Integer quantidade = 5;
         String descricao = "teste";
         BigDecimal preco = BigDecimal.ONE;
-        Produto produto1 = new Produto(Long.parseLong(id), nome, descricao, preco);
+        Produto produto1 = new Produto(Long.parseLong(id), nome, quantidade, descricao, preco);
         return produtoRepository.save(produto1);
     }
 
@@ -45,10 +45,5 @@ public class ProdutoTest {
                         .jsonPath("$[0].id").value(produto1.getId()));
 
     }
-
-
-
-
-
 
 }

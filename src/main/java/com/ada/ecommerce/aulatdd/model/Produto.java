@@ -23,6 +23,8 @@ public class Produto {
     @Id
     private Long id;
     private String nome;
+
+    private Integer quantidade;
     private String descricao;
     private BigDecimal preco;
 

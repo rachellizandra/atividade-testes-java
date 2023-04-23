@@ -1,6 +1,7 @@
 package com.ada.ecommerce.aulatdd.service;
 
 import com.ada.ecommerce.aulatdd.model.Carrinho;
+import com.ada.ecommerce.aulatdd.model.Produto;
 import com.ada.ecommerce.aulatdd.repository.CarrinhoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,16 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class CarrinhoService {
 
     @Autowired
     CarrinhoRepository carrinhoRepository;
-
-    public CarrinhoService() {
-        this.carrinhoRepository = carrinhoRepository;
-    }
-
 
     public List<Carrinho> listarCarrinhos() {
         return carrinhoRepository.findAll();
@@ -41,7 +36,13 @@ public class CarrinhoService {
 
         carrinhoAtualizado.setQuantidade(carrinhoAnterior.getQuantidade());
         carrinhoAtualizado.setDataInsercao(carrinhoAnterior.getDataInsercao());
+        carrinhoAtualizado.setValorTotal(carrinhoAnterior.getValorTotal());
 
         carrinhoRepository.save(carrinhoAtualizado);
     }
+
+//    public void adicionarProdutoAoCarrinho(Produto produto) {
+//        Carrinho carrinho = new Carrinho();
+//        carrinho.adicionarProduto(produto);
+//    }
 }

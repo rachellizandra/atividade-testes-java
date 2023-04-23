@@ -36,7 +36,7 @@ public class CarrinhoController {
     }
 
     @PutMapping("/atualizar")
-    public void atualizarCliente(@RequestBody Carrinho carrinho){
+    public void atualizarCarrinho(@RequestBody Carrinho carrinho){
         carrinhoService.atualizarCarrinho(carrinho);
     }
 }
