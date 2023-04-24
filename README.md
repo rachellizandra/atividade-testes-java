@@ -1,5 +1,7 @@
 # Projeto E-commerce 01 - Testes Unitários e de Integração
 
+## Alunos: Bruno de Oliveira e Rachel Lizandra
+
 Realizar uma aplicação de e-commerce utiliza as classes Venda, ItemVenda, Produto, Carrinho e Cliente. Para garantir o bom funcionamento da aplicação, você foi designado para criar testes de integração para as classes mencionadas.
 
 A partir dessa informação, crie cenários de teste de integração para os seguintes casos:
