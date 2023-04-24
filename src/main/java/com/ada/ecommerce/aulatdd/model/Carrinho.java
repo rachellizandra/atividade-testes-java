@@ -29,28 +29,29 @@ public class Carrinho {
 
     private Integer quantidade;
     private LocalDateTime dataInsercao;
-    //private List<Produto> produtos = new ArrayList<>(); // Lista de produtos no carrinho
 
-//    public void adicionarProduto(Produto produto) {
-//        // Verifica se o produto já existe no carrinho
-//        boolean produtoExistente = false;
-//        for (Produto p : produtos) {
-//            if (p.getId().equals(produto.getId())) {
-//                p.setQuantidade(p.getQuantidade() + 1);
-//                produtoExistente = true;
-//                break;
-//            }
-//        }
-//
-//        // Se o produto não existe no carrinho, adiciona um novo
-//        if (!produtoExistente) {
-//            produto.setQuantidade(1);
-//            produtos.add(produto);
-//        }
-//
-//        // Atualiza o valor total do carrinho
-//        valorTotal = valorTotal.add(produto.getPreco());
-//    }
+    public void adicionarProduto(Produto produto) {
+        List<Produto> produtos = new ArrayList<>();
+
+        // Verifica se o produto já existe no carrinho
+        boolean produtoExistente = false;
+        for (Produto p : produtos) {
+            if (p.getId().equals(produto.getId())) {
+                p.setQuantidade(p.getQuantidade() + 1);
+                produtoExistente = true;
+                break;
+            }
+        }
+
+        // Se o produto não existe no carrinho, adiciona um novo
+        if (!produtoExistente) {
+            produto.setQuantidade(produto.getQuantidade());
+            produtos.add(produto);
+        }
+
+        // Atualiza o valor total do carrinho
+        valorTotal = valorTotal.add(produto.getPreco());
+    }
 
     @Override
     public String toString() {
@@ -58,7 +59,6 @@ public class Carrinho {
                 "id=" + id +
                 ", valorTotal=" + valorTotal +
                 ", dataInsercao=" + dataInsercao +
-                //", produtos=" + produtos +
                 '}';
     }
 }
